@@ -1,0 +1,36 @@
+------------------------------------------------
+		Arduino Vinyl Mp3 Player
+------------------------------------------------
+
+This is a simple mp3 player activated with a touch sensitive button that plays the mp3s on the dfplayer sd card.
+
+It also displays the current track onto the i2c LCD screen by keeping track of the current playing song and pulling the associated
+title from the album array.
+
+The code is pretty basic and should be easy to modify, I used it to mount into a vinyl display frame to have it play tracks
+when you press the touch button but you could find plenty of other uses for it.
+
+I used an Arduino Nano a 16x4 I2C LCD, a DFPlayer module and a TTP223 capacitive touch button.
+
+I also used two small 2w speakers that produce just enough sound to be useable but small enough they can fit behind the slim
+vinyl frame.
+
+There are plenty of ways this could be modified, you could add more functions quite easily, I considered having the touch button
+just play a random track everytime it was pressed but decided eventually on the skip function.
+
+A single press plays the initial track,
+Two quick presses skips track,
+Three quick presses players previous track,
+A long press (which is defined as 5 in the code) resets the module (and stops music playing)
+
+Anyway, I struggled to find the parts to make a drawing so:
+
+5v to VCC on TTP223, I2C LCD and DFPlayer
+GND to TTP223, I2C LCD and DFPlayer
+D11 to DFPlayer RX
+D10 to DFPlayer TX
+D8 to TTP223 I/O
+A4 to I2C SDA
+A5 to I2C SCL
+
+Have fun!
